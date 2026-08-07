@@ -283,36 +283,6 @@
             color: var(--muted);
         }
 
-        details {
-            margin-top: 14px;
-            border-top: 1px solid var(--line);
-            padding-top: 12px;
-        }
-
-        summary {
-            width: fit-content;
-            color: var(--accent);
-            cursor: pointer;
-            font-size: 12px;
-            font-weight: 550;
-        }
-
-        .detail-list {
-            margin: 11px 0 0;
-            padding: 0;
-            color: var(--muted);
-            font-size: 12px;
-            list-style-position: inside;
-        }
-
-        .detail-list li {
-            margin-bottom: 7px;
-        }
-
-        .detail-list li:last-child {
-            margin-bottom: 0;
-        }
-
         .meta {
             color: var(--faint);
             font-size: 12px;
@@ -403,12 +373,6 @@
             vertical-align: 1px;
         }
 
-        .coursework {
-            margin-top: 27px;
-            color: var(--muted);
-            font-size: 13px;
-        }
-
         .award-list li {
             display: grid;
             grid-template-columns: 1fr auto;
@@ -423,30 +387,6 @@
 
         .award-year {
             color: var(--faint);
-            font-size: 12px;
-        }
-
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 24px;
-        }
-
-        .skill-group h3 {
-            margin-bottom: 9px;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 7px;
-        }
-
-        .skill-tags span {
-            padding: 5px 9px;
-            border-radius: 7px;
-            background: var(--tag);
-            color: #555a61;
             font-size: 12px;
         }
 
@@ -557,10 +497,6 @@
                 text-align: left;
             }
 
-            .skills {
-                grid-template-columns: 1fr;
-            }
-
             .award-list li {
                 grid-template-columns: 1fr;
                 gap: 2px;
@@ -568,6 +504,373 @@
 
             footer {
                 display: block;
+            }
+        }
+
+        /* Typography is deliberately limited to three sizes: site title,
+           reading content, and concise profile details. */
+        body,
+        .nav-links a,
+        .eyebrow,
+        h1,
+        h2,
+        h3,
+        .lead,
+        .button-link,
+        .portrait-placeholder,
+        .profile-content strong,
+        .profile-role,
+        .contact-label,
+        .email,
+        .section-note,
+        .meta,
+        .timeline-title .role,
+        .timeline-item p,
+        .timeline-date,
+        .publication-title,
+        .authors,
+        .venue,
+        .tag,
+        .award-year,
+        footer {
+            font-size: 16px;
+        }
+
+        .name,
+        h2 {
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        h1,
+        h3,
+        .publication-title {
+            font-size: 16px;
+        }
+
+        .profile-role,
+        .contact-label,
+        .email {
+            font-size: 14px;
+        }
+
+        .site-header {
+            position: static;
+            border-bottom: 0;
+            background: transparent;
+            backdrop-filter: none;
+        }
+
+        .nav {
+            min-height: auto;
+            padding: 42px 0 18px;
+        }
+
+        .hero {
+            grid-template-columns: minmax(0, 1fr) 230px;
+            gap: 48px;
+            padding-top: 24px;
+        }
+
+        .timeline-item {
+            grid-template-columns: minmax(0, 1fr) 240px;
+        }
+
+        .timeline-date {
+            white-space: nowrap;
+        }
+
+        #education .timeline-item {
+            grid-template-columns: 62px minmax(0, 1fr) 240px;
+            gap: 18px;
+        }
+
+        .education-logo {
+            display: grid;
+            grid-row: 1;
+            place-items: start center;
+            padding-top: 3px;
+        }
+
+        .education-logo img {
+            display: block;
+            width: 62px;
+            height: 62px;
+            object-fit: contain;
+        }
+
+        h1,
+        h2,
+        h3,
+        .publication-title {
+            font-weight: 600;
+            letter-spacing: normal;
+        }
+
+        h1 {
+            max-width: none;
+            margin-bottom: 16px;
+            line-height: 1.55;
+        }
+
+        h2 {
+            margin-bottom: 18px;
+            line-height: 1.55;
+        }
+
+        .lead {
+            margin-bottom: 16px;
+            line-height: 1.55;
+            letter-spacing: normal;
+        }
+
+        .eyebrow,
+        .contact-label {
+            font-weight: 600;
+            letter-spacing: normal;
+            text-transform: none;
+        }
+
+        .profile-card {
+            overflow: visible;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .portrait {
+            border-radius: 0;
+        }
+
+        .profile-content {
+            padding: 14px 0 0;
+        }
+
+        .profile-role {
+            margin-bottom: 14px;
+        }
+
+        .button-link {
+            min-height: 0;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            color: var(--accent);
+            font-weight: 400;
+        }
+
+        .button-link + .button-link::before {
+            margin-right: 10px;
+            color: var(--muted);
+            content: "·";
+        }
+
+        .button-link:hover,
+        .button-link:focus-visible {
+            border-color: transparent;
+            text-decoration: underline;
+            transform: none;
+        }
+
+        .tag {
+            padding: 0;
+            border-radius: 0;
+            background: transparent;
+            font-weight: 400;
+            letter-spacing: normal;
+        }
+
+        .publications-heading {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px 16px;
+            margin-bottom: 28px;
+        }
+
+        .publications-heading h2 {
+            margin: 0;
+        }
+
+        .publication-legend {
+            display: flex;
+            gap: 10px;
+        }
+
+        .publication-item {
+            padding: 0;
+        }
+
+        .publication-item + .publication-item {
+            margin-top: 42px;
+        }
+
+        .publication-item.with-thumbnail {
+            display: grid;
+            grid-template-columns: 170px minmax(0, 1fr);
+            gap: 24px;
+            align-items: center;
+        }
+
+        .publication-thumbnail {
+            min-width: 0;
+        }
+
+        .publication-thumbnail .venue-label {
+            display: block;
+            width: 170px;
+            margin-bottom: 10px;
+            border: 1px solid;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        .publication-legend span,
+        .publication-thumbnail .conference {
+            border-color: #e8afe4;
+            background: #fae8f8;
+            color: #bd0ab8;
+        }
+
+        .publication-legend span {
+            padding: 1px 11px;
+            border: 1px solid;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .publication-legend .journal,
+        .publication-thumbnail .journal {
+            border-color: #abd2dc;
+            background: #e4f2f5;
+            color: #15758a;
+        }
+
+        .publication-image-frame {
+            position: relative;
+            display: grid;
+            place-items: center;
+            width: 170px;
+            height: 88px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            background: var(--surface);
+        }
+
+        .publication-image-frame:hover,
+        .publication-image-frame:focus-visible {
+            border-color: #b9c5cf;
+        }
+
+        .publication-thumbnail img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .publication-thumbnail img.is-rotated {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80px;
+            height: 160px;
+            transform: translate(-50%, -50%) rotate(90deg);
+            transform-origin: center;
+        }
+
+        .publication-content > :last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 560px) {
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .timeline-date {
+                grid-row: 1;
+                text-align: left;
+            }
+
+            #education .timeline-item {
+                grid-template-columns: 62px minmax(0, 1fr);
+                gap: 14px;
+            }
+
+            #education .timeline-date {
+                grid-column: 1 / -1;
+                grid-row: 1;
+            }
+
+            #education .education-logo {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            #education .timeline-item > div:nth-child(2) {
+                grid-column: 2;
+                grid-row: 2;
+            }
+
+            .publication-item.with-thumbnail {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .publication-item + .publication-item {
+                margin-top: 32px;
+            }
+
+            body,
+            .nav-links a,
+            .eyebrow,
+            h1,
+            h2,
+            h3,
+            .lead,
+            .button-link,
+            .profile-content strong,
+            .profile-role,
+            .contact-label,
+            .email,
+            .section-note,
+            .meta,
+            .timeline-title .role,
+            .timeline-item p,
+            .timeline-date,
+            .publication-title,
+            .authors,
+            .venue,
+            .tag,
+            .award-year,
+            footer {
+                font-size: 16px;
+            }
+
+            .name,
+            h2 {
+                font-size: 26px;
+            }
+
+            h1,
+            h3,
+            .publication-title {
+                font-size: 16px;
+            }
+
+            .profile-role,
+            .contact-label,
+            .email {
+                font-size: 14px;
             }
         }
     </style>
@@ -581,7 +884,7 @@
                 <li><a href="#main">Main</a></li>
                 <li><a href="#research">Research</a></li>
                 <li><a href="#publications">Publications</a></li>
-                <li><a href="#experience">Experience</a></li>
+                <li><a href="#experience">Work</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="FU JUNHAN_CV.pdf" target="_blank" rel="noopener">CV</a></li>
             </ul>
@@ -591,17 +894,13 @@
     <main>
         <section class="hero" id="main">
             <div>
-                <p class="eyebrow">Undergraduate Researcher · Data Science</p>
-                <h1>Building reliable and efficient intelligent systems.</h1>
+                <p class="eyebrow">Undergraduate Senior · Data Science</p>
                 <p class="lead">
                     Hi, I am Junhan (Oscar) Fu, an undergraduate student at The Chinese University of Hong Kong,
                     Shenzhen.
                 </p>
                 <p class="intro">
-                    My work spans multimodal intelligence, structured speech understanding, and
-                    data-driven optimization. I enjoy turning research ideas into reproducible systems,
-                    from efficient vision-language models and speech captioning frameworks to urban
-                    sensing platforms and applied machine learning pipelines.
+                    I work on multimodal intelligence, speech understanding, and data-driven optimization.
                 </p>
                 <div class="inline-links">
                     <a class="button-link" href="#research">Explore my work</a>
@@ -613,7 +912,6 @@
             <aside class="profile-card" aria-label="Profile and contact information">
                 <img class="portrait" src="海马体.jpg" alt="Portrait of Junhan Fu">
                 <div class="profile-content">
-                    <strong>Junhan Fu</strong>
                     <p class="profile-role">B.S. Data Science<br>CUHK-Shenzhen · Class of 2027</p>
 
                     <span class="contact-label">School</span>
@@ -627,33 +925,19 @@
 
         <section id="research">
             <div class="section-heading">
-                <h2>Current work</h2>
+                <h2>Research Experience</h2>
                 <div>
-                    <p class="section-note">
-                        I currently work across speech, multimodal reasoning, and optimization, with an
-                        emphasis on systems that are both capable and efficient.
-                    </p>
-
                     <ol class="timeline">
                         <li class="timeline-item">
                             <div>
                                 <div class="timeline-title">
-                                    <h3>Shenzhen Research Institute of Big Data</h3>
-                                    <span class="role">Speech Algorithm Research Assistant · Prof. Benyou Wang</span>
+                                    <h3>Shenzhen Research Institute of Big Data (SRIBD)</h3>
+                                    <span class="role">Speech Algorithm Research Assistant · Prof. <a href="https://wabyking.github.io" target="_blank" rel="noopener">Benyou Wang</a></span>
                                 </div>
-                                <p class="meta">Structured Speech Captioning</p>
                             <p>
                                 Developing hierarchical speech representations and a Caption-TTS dual
                                 learning framework for fine-grained, controllable speech understanding.
                             </p>
-                            <details>
-                                <summary>Research details</summary>
-                                <ul class="detail-list">
-                                    <li>Model semantic, acoustic, paralinguistic, and scene attributes through hierarchical speech representations.</li>
-                                    <li>Use controllability-weighted optimization to jointly improve speech understanding and generation.</li>
-                                    <li>Build a multi-Audio-LLM annotation pipeline for schema-guided consensus pseudo-labels.</li>
-                                </ul>
-                            </details>
                             </div>
                             <div class="timeline-date">Feb 2026 – Present<br>Shenzhen, China</div>
                         </li>
@@ -661,22 +945,13 @@
                         <li class="timeline-item">
                             <div>
                                 <div class="timeline-title">
-                                    <h3>Alibaba–NTU Singapore Joint Research Institute, NTU</h3>
-                                    <span class="role">Multimodal Architecture Research Assistant · Prof. Weisi Lin</span>
+                                    <h3>Alibaba–NTU Global e-Sustainability CorpLab (ANGEL), NTU</h3>
+                                    <span class="role">Multimodal Architecture Research Assistant · Prof. <a href="https://scholar.google.com.tw/citations?user=D_S41X4AAAAJ" target="_blank" rel="noopener">Weisi Lin</a></span>
                                 </div>
-                                <p class="meta">Efficient Visual Token Pruning</p>
                             <p>
                                 Designing uncertainty-aware token pruning methods that preserve critical
                                 visual evidence while improving multimodal inference efficiency.
                             </p>
-                            <details>
-                                <summary>Research details</summary>
-                                <ul class="detail-list">
-                                    <li>Benchmark FastV, VScan, CDPruner, VisionSelector, GlimpsePrune, and related methods on LLaVA-v1.5-7B and Qwen2.5-VL-7B.</li>
-                                    <li>Use multi-head attention variance and prompt perturbation analysis under image and question perturbations.</li>
-                                    <li>Develop RobustPruner to jointly model token relevance, uncertainty, and diversity.</li>
-                                </ul>
-                            </details>
                             </div>
                             <div class="timeline-date">Nov 2025 – Present<br>Singapore</div>
                         </li>
@@ -685,21 +960,12 @@
                             <div>
                                 <div class="timeline-title">
                                     <h3>The Chinese University of Hong Kong, Shenzhen</h3>
-                                    <span class="role">Data Simulation &amp; Optimization Research Assistant · Prof. Ruizhi Liao</span>
+                                    <span class="role">Data Simulation &amp; Optimization Research Assistant · Prof. <a href="https://myweb.cuhk.edu.cn/rzliao" target="_blank" rel="noopener">Ruizhi Liao</a></span>
                                 </div>
-                                <p class="meta">Urban Crowdsensing Systems</p>
                             <p>
                                 Building simulation and integer-programming tools for scalable parking
-                                sensing, including BusScan and the STCB optimization algorithm.
+                                sensing, including BusScan and the STCB optimization algorithm in urban crowdsensing systems.
                             </p>
-                            <details>
-                                <summary>Research details</summary>
-                                <ul class="detail-list">
-                                    <li>Integrate configurable traffic simulation, Hough Transform road extraction, and parking occupancy modeling in BusScan.</li>
-                                    <li>Formulate a large-scale spatiotemporal integer linear program for crowdsensing sensor allocation.</li>
-                                    <li>Combine row generation with data-driven cuts in STCB, producing over 100% optimization speedup and 50.45% fewer sensing vehicles on San Francisco transit data.</li>
-                                </ul>
-                            </details>
                             </div>
                             <div class="timeline-date">Sep 2024 – Mar 2026<br>Shenzhen, China</div>
                         </li>
@@ -710,7 +976,13 @@
 
         <section id="publications">
             <div class="section-heading">
-                <h2>Publications</h2>
+                <div class="publications-heading">
+                    <h2>Selected Publications</h2>
+                    <div class="publication-legend" aria-label="Publication types">
+                        <span class="conference">Conference</span>
+                        <span class="journal">Journal</span>
+                    </div>
+                </div>
                 <ol class="publication-list">
                     <li class="publication-item">
                         <p class="publication-title">
@@ -722,31 +994,55 @@
                         <p class="venue">Under review at NeurIPS 2026</p>
                     </li>
 
-                    <li class="publication-item">
-                        <p class="publication-title">
-                            Prune With Confidence: Uncertainty-Calibrated Token Selection for
-                            Vision-Language Models
-                        </p>
-                        <p class="authors">H. Zhu, <strong>J. Fu</strong>, X. Zhang, J. Wang, and W. Lin</p>
-                        <p class="venue">Accepted at IEEE ICIP 2026 Satellite Workshops</p>
+                    <li class="publication-item with-thumbnail">
+                        <div class="publication-thumbnail">
+                            <span class="venue-label conference">IEEE ICIP 2026</span>
+                            <a class="publication-image-frame" href="assets/Prune-with-confidence.png" target="_blank" rel="noopener" aria-label="Open Prune With Confidence preview">
+                                <img src="assets/Prune-with-confidence.png" alt="Prune With Confidence paper preview">
+                            </a>
+                        </div>
+                        <div class="publication-content">
+                            <p class="publication-title">
+                                Prune With Confidence: Uncertainty-Calibrated Token Selection for
+                                Vision-Language Models
+                            </p>
+                            <p class="authors">H. Zhu, <strong>J. Fu</strong>, X. Zhang, J. Wang, and W. Lin</p>
+                            <p class="venue">Accepted at IEEE ICIP 2026 Satellite Workshops</p>
+                        </div>
                     </li>
 
-                    <li class="publication-item">
-                        <p class="publication-title">
-                            <a href="https://ieeexplore.ieee.org/document/11358826" target="_blank" rel="noopener">System-Level Optimization of Crowdsensing Sensor Allocation for Urban Parking
-                            in Smart Cities</a>
-                        </p>
-                        <p class="authors">B. Pang, <strong>J. Fu</strong>, R. Liao, and Y. Ye</p>
-                        <p class="venue">IEEE Internet of Things Journal, 2026</p>
+                    <li class="publication-item with-thumbnail">
+                        <div class="publication-thumbnail">
+                            <span class="venue-label journal">IEEE IoTJ</span>
+                            <a class="publication-image-frame" href="assets/System-level.png" target="_blank" rel="noopener" aria-label="Open System-Level Optimization preview">
+                                <img class="is-rotated" src="assets/System-level.png" alt="System-Level Optimization paper preview">
+                            </a>
+                        </div>
+                        <div class="publication-content">
+                            <p class="publication-title">
+                                <a href="https://ieeexplore.ieee.org/document/11358826" target="_blank" rel="noopener">System-Level Optimization of Crowdsensing Sensor Allocation for Urban Parking
+                                in Smart Cities</a>
+                            </p>
+                            <p class="authors">B. Pang, <strong>J. Fu</strong>, R. Liao, and Y. Ye</p>
+                            <p class="venue">IEEE Internet of Things Journal, 2026</p>
+                        </div>
                     </li>
 
-                    <li class="publication-item">
-                        <p class="publication-title">
-                            <a href="https://ieeexplore.ieee.org/abstract/document/11423693" target="_blank" rel="noopener">BusScan: A Simulation Platform for Evaluating Bus-Based On-street Parking
-                            Detection Strategies</a>
-                        </p>
-                        <p class="authors"><strong>J. Fu</strong>, Y. Li, and R. Liao</p>
-                        <p class="venue">IEEE ITSC, 2025</p>
+                    <li class="publication-item with-thumbnail">
+                        <div class="publication-thumbnail">
+                            <span class="venue-label conference">IEEE ITSC 2025</span>
+                            <a class="publication-image-frame" href="assets/BusScan.png" target="_blank" rel="noopener" aria-label="Open BusScan preview">
+                                <img class="is-rotated" src="assets/BusScan.png" alt="BusScan paper preview">
+                            </a>
+                        </div>
+                        <div class="publication-content">
+                            <p class="publication-title">
+                                <a href="https://ieeexplore.ieee.org/abstract/document/11423693" target="_blank" rel="noopener">BusScan: A Simulation Platform for Evaluating Bus-Based On-street Parking
+                                Detection Strategies</a>
+                            </p>
+                            <p class="authors"><strong>J. Fu</strong>, Y. Li, and R. Liao</p>
+                            <p class="venue">IEEE ITSC, 2025</p>
+                        </div>
                     </li>
                 </ol>
             </div>
@@ -754,26 +1050,19 @@
 
         <section id="experience">
             <div class="section-heading">
-                <h2>Experience</h2>
+                <h2>Work Experience</h2>
                 <ol class="timeline">
                     <li class="timeline-item">
                         <div>
                             <div class="timeline-title">
-                                <h3>Inspur Communication Information System Co., Ltd.</h3>
+                                <h3>Inspur Group (Inspur Communication Information System Co., Ltd.)</h3>
                                 <span class="role">Software R&amp;D Intern</span>
                             </div>
                             <p>
                                 Designing functional, performance, and security tests for China Mobile's
                                 LLM and agent scheduling platform, and developing AI-assisted automated
-                                testing workflows with uiautomator2 and Allure.
+                                testing workflows with uiautomator2 and Allure, leveraging Codex and Trae to automate test script generation and regression testing, improving testing efficiency and coverage
                             </p>
-                            <details>
-                                <summary>Work details</summary>
-                                <ul class="detail-list">
-                                    <li>Execute quality assurance before deployment of the LLM suxiaoban and agent scheduling platform.</li>
-                                    <li>Use Codex and Trae to assist test-script generation and regression testing, improving efficiency and coverage.</li>
-                                </ul>
-                            </details>
                         </div>
                         <div class="timeline-date">Jun 2026 – Sep 2026<br>Nanjing, China</div>
                     </li>
@@ -781,22 +1070,14 @@
                     <li class="timeline-item">
                         <div>
                             <div class="timeline-title">
-                                <h3>MY CAPITAL</h3>
-                                <span class="role">Quantitative Research Intern</span>
+                                <h3>MY Capital (Hainan) Private Fund Management Partnership</h3>
+                                <span class="role">Quantitative-AI Research Intern</span>
                             </div>
                             <p>
                                 Built an interpretable ST/*ST risk prediction pipeline based on regulatory
                                 criteria and announcement text, reaching 82% recall with a false-positive
-                                rate below 0.2%.
+                                rate below 0.2%. The resulting model was applied to the company’s subsequent technology iterations.
                             </p>
-                            <details>
-                                <summary>Work details</summary>
-                                <ul class="detail-list">
-                                    <li>Combine big-data processing, TF-IDF, Gradient Boosting, and rule-level exchange criteria in a reproducible pipeline.</li>
-                                    <li>Align announcement text with regulatory decision logic and selectively incorporate full-text signals using risk-sentence extraction.</li>
-                                    <li>Benchmark accuracy, recall, false-positive rate, and model-complexity trade-offs for later technology iterations.</li>
-                                </ul>
-                            </details>
                         </div>
                         <div class="timeline-date">Jan 2026 – May 2026<br>Shenzhen, China</div>
                     </li>
@@ -810,16 +1091,8 @@
                             <p>
                                 Developed enterprise data pipelines, NLP and vision-language models, and
                                 monitoring dashboards for more than 50,000 public-opinion records in the
-                                new-energy vehicle industry.
+                                new-energy vehicle industry. The developed system was adopted as a prototype for the company's subsequent production tasks.
                             </p>
-                            <details>
-                                <summary>Work details</summary>
-                                <ul class="detail-list">
-                                    <li>Build data crawling, cleaning, storage, and analytics pipelines for targeted corporate clients.</li>
-                                    <li>Develop BERT, LSTM, CLIP, and BLIP-2 models for public-opinion analysis.</li>
-                                    <li>Create sentiment-trend and real-time monitoring dashboards using LSTM and ARIMA; the system became a prototype for later production work.</li>
-                                </ul>
-                            </details>
                         </div>
                         <div class="timeline-date">June 2025 – Aug 2025<br>Shanghai, China</div>
                     </li>
@@ -835,13 +1108,6 @@
                                 GLD and VIX hedges, achieving a 34.33% annualized return and a 2.94 Sharpe
                                 ratio in the project evaluation.
                             </p>
-                            <details>
-                                <summary>Project details</summary>
-                                <ul class="detail-list">
-                                    <li>Evaluate the long-term performance and volatility of eight equity factors under the Fama-French framework.</li>
-                                    <li>Produce quantitative reports and portfolio-allocation analyses across bull and bear markets.</li>
-                                </ul>
-                            </details>
                         </div>
                         <div class="timeline-date">Dec 2025 – Jan 2026<br>Shenzhen, China</div>
                     </li>
@@ -855,6 +1121,9 @@
                 <div>
                     <ol class="timeline">
                         <li class="timeline-item">
+                            <div class="education-logo">
+                                <img src="assets/cuhk-shenzhen-logo.png" alt="CUHK-Shenzhen logo">
+                            </div>
                             <div>
                                 <div class="timeline-title">
                                     <h3>The Chinese University of Hong Kong, Shenzhen</h3>
@@ -866,33 +1135,34 @@
                         </li>
 
                         <li class="timeline-item">
+                            <div class="education-logo">
+                                <img src="assets/ntu-logo.png" alt="Nanyang Technological University logo">
+                            </div>
                             <div>
                                 <div class="timeline-title">
                                     <h3>Nanyang Technological University</h3>
                                     <span class="role">Exchange Student · AY2025 Study Abroad Ambassador</span>
                                 </div>
+                                <p>Major GPA 4.63/5.0</p>
                             </div>
                             <div class="timeline-date">Aug 2025 – Dec 2025<br>Singapore</div>
                         </li>
 
                         <li class="timeline-item">
+                            <div class="education-logo">
+                                <img src="assets/uc-berkeley-logo.png" alt="UC Berkeley logo">
+                            </div>
                             <div>
                                 <div class="timeline-title">
                                     <h3>University of California, Berkeley</h3>
                                     <span class="role">Summer Visiting Student</span>
                                 </div>
+                                <p>Major GPA 3.9/4.0</p>
                             </div>
                             <div class="timeline-date">Jun 2024 – Aug 2024<br>Berkeley, California</div>
                         </li>
                     </ol>
 
-                    <p class="coursework">
-                        <strong>Relevant coursework:</strong> Calculus I &amp; II, Probability and
-                        Statistics I &amp; II, Linear Algebra and Applications, Ordinary Differential
-                        Equations, Data Science, Data Structures, Optimization, Machine Learning,
-                        Stochastic Processes, Designing &amp; Developing Databases, Algorithm Design &amp;
-                        Analysis, Artificial Intelligence, and C/C++ Programming.
-                    </p>
                 </div>
             </div>
         </section>
@@ -915,7 +1185,7 @@
                     </li>
                     <li>
                         <span>Third Prize, Provincial Level, CUMCM</span>
-                        <span class="award-year">2024, 2025</span>
+                        <span class="award-year">2026</span>
                     </li>
                     <li>
                         <span>Outstanding Report Award, Financial Investment Planning Competition</span>
@@ -925,52 +1195,6 @@
             </div>
         </section>
 
-        <section id="skills">
-            <div class="section-heading">
-                <h2>Skills &amp; interests</h2>
-                <div class="skills">
-                    <div class="skill-group">
-                        <h3>Programming</h3>
-                        <div class="skill-tags">
-                            <span>Python</span>
-                            <span>C++</span>
-                            <span>SQL</span>
-                            <span>R</span>
-                            <span>MATLAB</span>
-                            <span>MongoDB</span>
-                            <span>Assembly</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Libraries &amp; tools</h3>
-                        <div class="skill-tags">
-                            <span>PyTorch</span>
-                            <span>TensorFlow</span>
-                            <span>Transformers</span>
-                            <span>uiautomator2</span>
-                            <span>Allure</span>
-                            <span>Git</span>
-                            <span>Linux</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Languages</h3>
-                        <div class="skill-tags">
-                            <span>Mandarin Chinese · Native</span>
-                            <span>English · Fluent</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Interests</h3>
-                        <div class="skill-tags">
-                            <span>Swimming</span>
-                            <span>Electronic music</span>
-                            <span>Round-the-world travel</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
