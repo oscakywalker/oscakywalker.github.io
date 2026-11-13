@@ -838,6 +838,19 @@
             margin-bottom: 0;
         }
 
+        .publication-award {
+            display: inline-block;
+            margin-top: 7px;
+            padding: 3px 10px;
+            border: 1px solid #e8c39d;
+            border-radius: 7px;
+            background: #f8eee3;
+            color: #b96b00;
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
         @media (max-width: 560px) {
             .timeline-item {
                 grid-template-columns: 1fr;
@@ -1032,14 +1045,22 @@
                     </div>
                 </div>
                 <ol class="publication-list">
-                    <li class="publication-item">
-                        <p class="publication-title">
-                            RobustPruner: Decoupled Relevance and Uncertainty for Efficient Visual Token
-                            Pruning in Multimodal Large Language Models
-                            <span class="tag">Co-first author</span>
-                        </p>
-                        <p class="authors">H. Zhu*, <strong>J. Fu*</strong>, X. Zhang, J. Wang, and W. Lin</p>
-                        <p class="venue">Under review at NeurIPS 2026</p>
+                    <li class="publication-item with-thumbnail">
+                        <div class="publication-thumbnail">
+                            <span class="venue-label conference">NeurIPS 2026</span>
+                            <a class="publication-image-frame" href="assets/RobustPruner_poster.png" target="_blank" rel="noopener" aria-label="Open RobustPruner poster">
+                                <img src="assets/RobustPruner_poster.png" alt="RobustPruner framework poster">
+                            </a>
+                        </div>
+                        <div class="publication-content">
+                            <p class="publication-title">
+                                RobustPruner: Decoupled Relevance and Uncertainty for Efficient Visual Token
+                                Pruning in Multimodal Large Language Models
+                                <span class="tag">Co-first author</span>
+                            </p>
+                            <p class="authors">H. Zhu*, <strong>J. Fu*</strong>, X. Zhang, J. Wang, and W. Lin</p>
+                            <p class="venue">NeurIPS 2026 (Accepted)</p>
+                        </div>
                     </li>
 
                     <li class="publication-item with-thumbnail">
@@ -1055,7 +1076,8 @@
                                 Vision-Language Models
                             </p>
                             <p class="authors">H. Zhu, <strong>J. Fu</strong>, X. Zhang, J. Wang, and W. Lin</p>
-                            <p class="venue">Accepted at IEEE ICIP 2026 Satellite Workshops</p>
+                            <p class="venue">ICIP 2026 Satellite Workshop (Fourth IEEE Workshop on Coding for Machines), 2026</p>
+                            <a class="publication-award" href="assets/ICIP2026_Best_Paper_Runner_Up.pdf" target="_blank" rel="noopener">🏆 BEST PAPER AWARD RUNNER-UP</a>
                         </div>
                     </li>
 
